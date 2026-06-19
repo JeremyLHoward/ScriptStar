@@ -4,18 +4,25 @@ A CEP panel for InDesign that turns your scripts folder into a
 browseable, searchable launcher with favorites, groups, and drag-and-drop
 reordering.
 
-> Note: this repository hosts the installer and release notes only.
+> Note: this repository hosts the zxp signed extension and release notes only.
 > The source code is not public.
 
 ## Install
 
-1. Download the latest installer:
-   **[ScriptStar-v1.1.0.pkg](https://github.com/JeremyLHoward/ScriptStar/releases/latest)**
-2. Restart InDesign and look under **Window → Extensions → ScriptStar**.
+ScriptStar ships as a signed `.zxp` extension, which installs with a free
+third-party tool:
+
+1. Download and install the **aescripts ZXP Installer**:
+   <https://aescripts.com/learn/post/zxp-installer>
+2. Download the latest ScriptStar release:
+   **[ScriptStar-1.2.0.zxp](https://github.com/JeremyLHoward/ScriptStar/releases/latest)**
+3. Open the ZXP Installer and drag `ScriptStar-1.2.0.zxp` onto its window
+   (or use the **Install** button and browse to the file).
+4. Restart InDesign and look under **Window → Extensions → ScriptStar**.
 
 ## Requirements
 
-- macOS
+- macOS or Windows
 - Adobe InDesign 2023 (v18) or later
 
 ## Version history
@@ -27,4 +34,4 @@ https://github.com/JeremyLHoward/ScriptStar/releases).
 
 Open an issue and include:
 - InDesign version (Help → About InDesign)
-- macOS version
+- Your operating system and version (macOS or Windows)
