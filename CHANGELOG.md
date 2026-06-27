@@ -2,6 +2,40 @@
 
 All notable changes to ScriptStar are documented in this file.
 
+## [1.2.4] — 2026-06-27
+
+### Fixed
+- **Windows: delete and rename now work on files.** Previously, deleting a file on Windows incorrectly routed through the folder-delete code path (which failed because `rmdir` refuses files), and rename had the same misrouting. Both operations are now correctly disambiguated and work for files and folders on both platforms.
+
+## [1.2.3] — 2026-06-27
+
+### Added
+- **Non-script files now appear in the listing.** Files like `.png`, `.pdf`, or other assets you keep alongside your scripts will show up in the **User Scripts** and **App Scripts** tabs. They get a generic file icon and are visible for context (rename, reveal in Finder/Explorer, copy filename, delete) but cannot be launched.
+
+### Fixed
+- **Clicking a non-script file no longer throws an error.** Previously, clicking a `.txt` or other non-runnable file attempted to launch it as a script. Non-runnable rows are now visually dimmed, show a default cursor on hover, and do nothing on click.
+- **Folder icons no longer appear next to non-folder files.** Hardened the file-vs-folder classifier in two places so files with recognisable extensions (`.png`, `.pdf`, etc.) are never mistaken for folders, even when InDesign's file system API returns ambiguous results.
+
+### Changed
+- **Context menu adapts for non-script files.** Right-clicking a non-script file no longer shows "Run Script" (since it can't be run), and the "Copy Script Name" item now reads "Copy File Name."
+- Renamed the **OK** button in the Preferences dialog to **Apply** for clarity.
+
+-------
+
+## [1.2.2] — 2026-06-22
+
+### Added
+- A **Show Keyboard Shortcuts** preference in the preferences dialog (on by default). When disabled, keyboard shortcuts are hidden from every list (User Scripts, App Scripts, Favorites, and Groups). The setting persists across restarts.
+
+### Fixed
+- **Keyboard shortcuts display again.** Shortcuts assigned to scripts had stopped appearing in the script list. The shortcut-set parser was rewritten to read InDesign's current shortcut files correctly.
+- Internal key identifiers are now cleansed from displayed shortcuts: the `#Keyboard_` prefix InDesign sometimes emits is stripped, so a shortcut reads as `Ctrl+Num 5` instead of `Ctrl+#Keyboard_Num 5`.
+
+### Changed
+- **Faster startup.** Reading keyboard shortcuts was adding several seconds to panel load. The shortcut set is now parsed once per launch (instead of repeatedly) and only the relevant script entries are examined rather than every shortcut in the set, restoring near-instant loading. Newly assigned shortcuts are picked up on **Refresh**.
+
+-------
+
 ## [1.2.1] — 2026-06-19
 
 ### Fixed
