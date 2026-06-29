@@ -2,6 +2,17 @@
 
 All notable changes to ScriptStar are documented in this file.
 
+## [1.2.5] — 2026-06-27
+
+### Added
+- **Breadcrumbs** in the **User Scripts** and **App Scripts** tabs. When you navigate into subfolders, a breadcrumb trail appears between the toolbar and the script list, showing your path back to **Home**. Earlier crumbs are clickable to jump back; the current folder is shown without a link.
+- **Drag-to-move on breadcrumbs.** Drag a script onto any earlier crumb in the trail to move the script into that folder.
+- **Folders in search results.** Searching for a name now matches folders as well as files. Click a folder result to navigate into it (the search clears automatically).
+
+### Preferences
+- New **Show Breadcrumbs** option (default on) — hides the breadcrumb row from both tabs when off.
+- New **Include Folders in Search Results** option (default on) — when off, search returns only files.
+
 ## [1.2.4] — 2026-06-27
 
 ### Fixed
